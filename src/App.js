@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+
+import { useContext, useEffect } from 'react';
 import './App.css';
+import { AppContext } from './context/AppContext';
+import Header from './components/Header';
+import Blogs from './components/Blogs';
+import Pagination from './components/Pagination';
+import Spinner from './components/Spinner';
 
 function App() {
+  const {fetchBlogs, loading}=useContext(AppContext);
+
+  useEffect(()=>{
+    fetchBlogs();
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      { 
+        loading?<Spinner/>:
+        <Blogs/>
+      }
+      <Pagination/>
     </div>
   );
 }

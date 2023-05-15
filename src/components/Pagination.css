@@ -1,0 +1,38 @@
+.page{
+    padding: 1em 1em;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 1em;
+    width: 800px;
+    background-color: rgb(51, 56, 55);
+    border-radius: 8px;
+    height: 40px;
+}
+.btn{
+    width: 80px;
+    height: 40px;
+    border-radius: 7px;
+}
+
+@media (max-width: 1050px){
+    .page{
+        width: 600px;
+        
+    }
+}
+
+@media (max-width: 800px){
+    .page{
+        width: 400px;
+        
+    }
+    
+}
+@media (max-width: 580px){
+    .page{
+        width: 280px;
+        
+    }
+    
+}
